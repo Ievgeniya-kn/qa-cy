@@ -8,6 +8,7 @@ module.exports = defineConfig({
     defaultCommandTimeout: 5000,
     responseTimeout: 50000,
     screenshotOnRunFailure: true,
+    chromeWebSecurity: false,
     screenshotsFolder: "cypress/screenshots",
     testIsolation: true,
     setupNodeEvents(on, config) {
