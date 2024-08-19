@@ -1,7 +1,9 @@
 /// <reference types="cypress" />
-
 import LoginPage from "../../../support/pageObject/pages/LoginPage"
-import credentials from "../../../fixtures/credential.json"
+// import credentials from "../../../fixtures/credential.json"
+
+const user_name = Cypress.config("USER_NAME")
+const user_password = Cypress.config("USER_PASSWORD")
 
 describe('example to-do app', () => {
     beforeEach(() => {
@@ -27,12 +29,12 @@ describe('example to-do app', () => {
     })
 
     it('4 - Verify existed User can login', () => {
-        LoginPage.login(credentials.usernameValid, credentials.password)
+        LoginPage.login(user_name,user_password)
         cy.get('.title').should('have.text', 'Products')
     })
 
     it('5 - Verify existed User can login', () => {
-        LoginPage.login(credentials.usernameInvalid, credentials.password)
+        LoginPage.login(user_name, user_password)
         cy.get('.inventory_item_desc').first().should('have.text', 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.')
     })
 

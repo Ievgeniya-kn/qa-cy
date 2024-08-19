@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-
 import LoginPage from "../../../support/pageObject/pages/LoginPage"
 import credentials from "../../../fixtures/credential.json"
 import InventoryPage from "../../../support/pageObject/pages/InventoryPage";
@@ -8,7 +7,7 @@ import ItemPage from "../../../support/pageObject/pages/ItemPage";
 describe('example to-do app', () => {
     beforeEach(() => {
         LoginPage.open();
-        LoginPage.login(credentials.usernameValid, credentials.password)
+        LoginPage.login(Cypress.config("USER_NAME"), Cypress.config("USER_PASSWORD"))
     })
 
 
