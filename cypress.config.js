@@ -1,14 +1,14 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
-  reporterOptions: {
-    charts: true,
-    reportPageTitle: 'custom-title',
-    embeddedScreenshots: true,
-    inlineAssets: true,
-    saveAllAttempts: false,
-  },
+  // reporter: 'cypress-mochawesome-reporter',
+  // reporterOptions: {
+  //   charts: true,
+  //   reportPageTitle: 'custom-title',
+  //   embeddedScreenshots: true,
+  //   inlineAssets: true,
+  //   saveAllAttempts: false,
+  // },
   e2e: {
     baseUrl: "https://qauto.forstudy.space/",
     USER_NAME: "standard_user",
@@ -22,7 +22,7 @@ module.exports = defineConfig({
     screenshotsFolder: "cypress/screenshots",
     testIsolation: true,
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
+      // require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
     },
   },
